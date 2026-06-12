@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import QuickCards from "../components/QuickCards";
-import AboutSection from "../components/AboutSection";
 import ResultsSection from "../components/ResultsSection";
 import NoticesSection from "../components/NoticesSection";
 import GallerySection from "../components/GallerySection";
@@ -34,9 +33,6 @@ export default function Home() {
       <main>
         <Hero />
         <QuickCards />
-
-        {/* Premium About Section */}
-        <AboutSection />
 
         {/* Admissions CTA */}
         <section className="relative py-24 overflow-hidden">
