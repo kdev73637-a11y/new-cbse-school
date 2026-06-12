@@ -56,7 +56,7 @@ function StatCard({ stat, index }) {
 
 export default function AboutSection() {
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-16 md:py-20 overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-animated-gradient" />
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, #1e40af 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
@@ -69,7 +69,7 @@ export default function AboutSection() {
 
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-20 reveal-on-scroll">
+        <div className="text-center mb-12 md:mb-14 reveal-on-scroll">
           <span className="inline-block bg-blue-100/60 backdrop-blur-sm text-blue-700 px-5 py-1.5 rounded-full text-sm font-semibold mb-4 border border-blue-200/50">
             Discover Our Story
           </span>
@@ -83,7 +83,7 @@ export default function AboutSection() {
         </div>
 
         {/* ===== ROW 1: Classroom Image + Intro Content ===== */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
           {/* Left - Rich Classroom Illustration */}
           <div className="reveal-left">
             <div className="relative">
@@ -202,13 +202,13 @@ export default function AboutSection() {
                 Established 2010
               </span>
             </div>
-            <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight">
+            <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 leading-tight">
               Nurturing Excellence,<br />
               <span className="text-gradient">Building Character</span>
             </h3>
 
             {/* School History */}
-            <div className="glass-card p-5 mb-6">
+            <div className="glass-card p-4 mb-4">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-lg shrink-0 shadow-md">📜</div>
                 <div>
@@ -246,8 +246,8 @@ export default function AboutSection() {
         </div>
 
         {/* ===== ROW 2: Mission, Vision, Philosophy Cards ===== */}
-        <div className="mb-24">
-          <div className="text-center mb-12 reveal-on-scroll">
+        <div className="mb-16">
+          <div className="text-center mb-8 md:mb-10 reveal-on-scroll">
             <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">
               What <span className="text-gradient">Drives Us</span>
             </h3>
@@ -255,7 +255,7 @@ export default function AboutSection() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {missionVision.map((item, i) => (
-              <div key={item.title} className={`glass-card p-7 group reveal-on-scroll stagger-${i + 1}`}>
+              <div key={item.title} className={`glass-card p-5 md:p-6 group reveal-on-scroll stagger-${i + 1}`}>
                 <div className={`w-14 h-14 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center text-2xl mb-5 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
                   {item.icon}
                 </div>
@@ -269,13 +269,13 @@ export default function AboutSection() {
 
         {/* ===== ROW 3: Animated Stats Counter ===== */}
         <div className="reveal-on-scroll">
-          <div className="text-center mb-10">
+          <div className="text-center mb-6 md:mb-8">
             <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">
               Our <span className="text-gradient-gold">Achievements</span> in Numbers
             </h3>
             <p className="text-gray-500">Milestones that reflect our dedication to excellence</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 md:gap-4">
             {stats.map((stat, i) => (
               <StatCard key={stat.label} stat={stat} index={i} />
             ))}
