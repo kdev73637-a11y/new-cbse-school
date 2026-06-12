@@ -23,14 +23,14 @@ const testimonials = [
 ];
 
 const galleryItems = [
-  { label: "Annual Day", icon: "🎊", color: "from-rose-100 to-pink-100" },
-  { label: "Sports Day", icon: "🏅", color: "from-blue-100 to-cyan-100" },
-  { label: "Science Exhibition", icon: "🧪", color: "from-green-100 to-emerald-100" },
-  { label: "Classroom", icon: "📚", color: "from-amber-100 to-yellow-100" },
-  { label: "Library", icon: "📖", color: "from-purple-100 to-violet-100" },
-  { label: "Playground", icon: "⚽", color: "from-teal-100 to-green-100" },
-  { label: "Lab Session", icon: "🔬", color: "from-indigo-100 to-blue-100" },
-  { label: "Cultural Event", icon: "🎭", color: "from-orange-100 to-amber-100" },
+  { label: "Annual Day 2025", icon: "🎊", color: "from-rose-100 to-pink-100", desc: "Students performing cultural dances and receiving awards on stage" },
+  { label: "Sports Day", icon: "🏅", color: "from-blue-100 to-cyan-100", desc: "Athletic competitions, relay races and medal ceremonies" },
+  { label: "Science Exhibition", icon: "🧪", color: "from-green-100 to-emerald-100", desc: "Students showcasing innovative science projects and models" },
+  { label: "Smart Classroom", icon: "📚", color: "from-amber-100 to-yellow-100", desc: "Interactive digital learning sessions with smart boards" },
+  { label: "Library Reading", icon: "📖", color: "from-purple-100 to-violet-100", desc: "Students reading and researching in the well-stocked library" },
+  { label: "Cricket Ground", icon: "⚽", color: "from-teal-100 to-green-100", desc: "Inter-school cricket tournament on our spacious ground" },
+  { label: "Chemistry Lab", icon: "🔬", color: "from-indigo-100 to-blue-100", desc: "Hands-on experiments in the fully equipped chemistry lab" },
+  { label: "Republic Day", icon: "🇮🇳", color: "from-orange-100 to-amber-100", desc: "Flag hoisting and patriotic performances by students" },
 ];
 
 export default function Home() {
@@ -47,18 +47,37 @@ export default function Home() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="reveal-on-scroll">
-              <SectionTitle title="About the School" subtitle="Building futures through quality education" />
+              <SectionTitle title="About the School" subtitle="Building futures through quality education since 2009" />
             </div>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="reveal-left">
                 <p className="text-gray-600 leading-8 mb-5 text-lg">
-                  A CBSE-style private school in Jharkhand focused on quality education, safe learning, and transparent information for parents. Our school is committed to nurturing every child&apos;s potential through modern teaching methods, experienced faculty, and a supportive environment.
+                  A CBSE-affiliated private school in Jharkhand focused on quality education, safe learning, and transparent information for parents. Our school is committed to nurturing every child&apos;s potential through modern teaching methods, experienced faculty, and a supportive environment.
                 </p>
-                <p className="text-gray-600 leading-8 mb-8">
+                <p className="text-gray-600 leading-8 mb-5">
                   We believe in holistic development — combining academic excellence with sports, arts, and moral education to create well-rounded individuals ready for the challenges of tomorrow.
                 </p>
+                <p className="text-gray-600 leading-8 mb-8">
+                  With over 15 years of dedicated service in education, we have built a reputation for academic rigor, transparent governance, and a caring approach toward every student. Our campus spans 5 acres with modern infrastructure, dedicated labs, a library with 10,000+ books, and extensive sports facilities.
+                </p>
+
+                {/* Key stats */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                  {[
+                    { num: "1000+", label: "Students" },
+                    { num: "50+", label: "Teachers" },
+                    { num: "15+", label: "Years" },
+                    { num: "98%", label: "Pass Rate" },
+                  ].map((s) => (
+                    <div key={s.label} className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-3 text-center border border-blue-100">
+                      <p className="text-2xl font-extrabold text-blue-700">{s.num}</p>
+                      <p className="text-xs text-gray-500 font-medium">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+
                 <Link href="/about" className="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition group">
-                  Learn More
+                  Learn More About Us
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </Link>
               </div>
@@ -135,32 +154,56 @@ export default function Home() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="reveal-on-scroll">
-              <SectionTitle title="Our Results" subtitle="Consistent academic excellence" align="center" />
+              <SectionTitle title="Our Results" subtitle="Consistent academic excellence year after year" align="center" />
             </div>
-            <div className="grid sm:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-3 gap-8 mb-12">
               {[
-                { year: "2025", class10: "98%", class12: "96%" },
-                { year: "2024", class10: "97%", class12: "95%" },
-                { year: "2023", class10: "96%", class12: "94%" },
+                { year: "2025", class10: "98%", class12: "96%", topper: "Rahul Kumar", topperPct: "99.2%" },
+                { year: "2024", class10: "97%", class12: "95%", topper: "Priya Singh", topperPct: "98.8%" },
+                { year: "2023", class10: "96%", class12: "94%", topper: "Amit Verma", topperPct: "98.4%" },
               ].map((r, i) => (
                 <div key={r.year} className={`reveal-scale stagger-${i + 1} bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 text-center border border-blue-100 card-lift`}>
                   <h3 className="text-3xl font-bold text-blue-700 mb-5">{r.year}</h3>
-                  <div className="space-y-4">
+                  <div className="space-y-4 mb-5">
                     <div className="bg-white rounded-xl p-4 shadow-sm">
-                      <p className="text-sm text-gray-500">Class X</p>
+                      <p className="text-sm text-gray-500">Class X Pass %</p>
                       <p className="text-3xl font-extrabold text-gray-900">{r.class10}</p>
                     </div>
                     <div className="bg-white rounded-xl p-4 shadow-sm">
-                      <p className="text-sm text-gray-500">Class XII</p>
+                      <p className="text-sm text-gray-500">Class XII Pass %</p>
                       <p className="text-3xl font-extrabold text-gray-900">{r.class12}</p>
                     </div>
+                  </div>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                    <p className="text-xs text-amber-600 font-medium">School Topper</p>
+                    <p className="text-sm font-bold text-gray-900">{r.topper} — {r.topperPct}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-10 reveal-on-scroll">
+
+            {/* Achievements */}
+            <div className="reveal-on-scroll bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl p-8 border border-amber-100 mb-10">
+              <h3 className="text-xl font-bold text-gray-900 mb-5 text-center">Key Achievements</h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {[
+                  { icon: "🏆", title: "District Topper 2025", desc: "Rahul Kumar secured 1st rank in the district for Class XII board exams" },
+                  { icon: "🎯", title: "100% Pass Rate", desc: "Class X achieved 100% pass rate for 5 consecutive years (2021-2025)" },
+                  { icon: "🏅", title: "Science Olympiad", desc: "8 students qualified for the National Science Olympiad finals in 2024" },
+                  { icon: "📊", title: "Average Score 85%+", desc: "School average score above 85% in both Class X and XII board exams" },
+                ].map((a) => (
+                  <div key={a.title} className="bg-white rounded-xl p-5 shadow-sm">
+                    <span className="text-2xl mb-2 block">{a.icon}</span>
+                    <h4 className="font-bold text-gray-900 text-sm mb-1">{a.title}</h4>
+                    <p className="text-xs text-gray-600 leading-5">{a.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="text-center reveal-on-scroll">
               <Link href="/results" className="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 group">
-                View All Results
+                View All Results & Download
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
               </Link>
             </div>
@@ -201,7 +244,7 @@ export default function Home() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <div className="reveal-on-scroll">
-              <SectionTitle title="Gallery" subtitle="Glimpses of school life" align="center" />
+              <SectionTitle title="Gallery" subtitle="Glimpses of school life and memorable moments" align="center" />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
               {galleryItems.map((item, i) => (
@@ -210,17 +253,27 @@ export default function Home() {
                     <div className="image-frame-inner">
                       <div className={`bg-gradient-to-br ${item.color} rounded-[calc(1rem-3px)] aspect-video flex items-center justify-center relative overflow-hidden`}>
                         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, #000 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
-                        <div className="relative z-10 text-center transition-transform duration-500 group-hover:scale-110">
+                        <div className="relative z-10 text-center transition-transform duration-500 group-hover:scale-110 p-2">
                           <span className="text-4xl block mb-2 drop-shadow-sm">{item.icon}</span>
                           <p className="text-sm font-bold text-gray-700">{item.label}</p>
                         </div>
                         {/* Hover overlay */}
                         <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/10 transition-colors duration-300" />
+                        {/* Description on hover */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                          <p className="text-xs text-white leading-4">{item.desc}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="text-center mt-10 reveal-on-scroll">
+              <Link href="/student-life" className="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 group">
+                View More in Student Life
+                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              </Link>
             </div>
           </div>
         </section>
